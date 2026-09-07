@@ -37,6 +37,10 @@ jobs:
       - name: Run Server linting
         run: npm run lint --if-present
         continue-on-error: true
+    
+      - name: Run Server tests
+        run: npm test --if-present
+        continue-on-error: true
 
   client-lint:
     runs-on: ubuntu-latest
@@ -65,4 +69,8 @@ jobs:
 
       - name: Run Client linting
         run: npm run lint --if-present
+        continue-on-error: true
+
+      - name: Run Client tests
+        run: npm test --if-present
         continue-on-error: true
